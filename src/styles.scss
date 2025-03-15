@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
-@import "ngx-toastr/toastr";
+@use "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@use "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@use "ngx-toastr/toastr";
 
 .li-style {
   @apply font-popins text-base font-normal text-bg capitalize;
