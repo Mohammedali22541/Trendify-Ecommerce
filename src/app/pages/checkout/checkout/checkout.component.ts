@@ -157,7 +157,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
           },
           error: (err) => {
             console.log(err);
-            console.log(this.address.value);
+            // console.log(this.address.value);
           },
         });
     }
