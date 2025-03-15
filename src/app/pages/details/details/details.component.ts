@@ -155,14 +155,14 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   // updateCartProductQuantity(cartId: string, count: number): void {
   //   this.CartService.updateCartProductQuantity(cartId, count).subscribe({
-  //     next: (res) => {
+  // next: (res) => {
   //       console.log(res);
   //     },
   //     error: (err) => {
   //       console.log(err);
   //     },
   //   });
-  // }
+  // }'
 
   toggelDescription(): void {
     this.showFullDescription = !this.showFullDescription;
