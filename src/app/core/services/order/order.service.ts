@@ -27,7 +27,7 @@ export class OrderService {
     city: string
   ): Observable<any> {
     return this.httpClient.post(
-      `${environment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://trendify-ecommerce-delta.vercel.app`,
+      `${environment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://trendify-ecommerce-mocha.vercel.app`,
       {
         shippingAddress: {
           details: details,
