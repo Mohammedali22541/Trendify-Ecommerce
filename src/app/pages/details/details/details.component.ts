@@ -74,7 +74,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           this.specificProductDetails = res.data;
           this.getSimilarProducts();
         },
@@ -90,7 +90,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           this.cartService.cartNumber.set(res.numOfCartItems);
           this.toastrService.success(res.message, 'cart');
@@ -110,7 +110,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           this.toastrService.success(res.message, 'WishList');
           this.toastrService.toastrConfig.progressBar = true;
           this.toastrService.toastrConfig.timeOut = 2000;
@@ -143,7 +143,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (res) => {
-            console.log(res);
+            // console.log(res);
             this.SimilarProducts = res.data;
           },
           error: (err) => {

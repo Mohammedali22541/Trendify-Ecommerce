@@ -40,7 +40,7 @@ export class CartComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res) => {
           this.cartDetails = res.data;
-          console.log(res);
+          // console.log(res);
           if (res.numOfCartItems == 0) {
             this.disableButton = true;
           }
@@ -77,7 +77,7 @@ export class CartComponent implements OnInit, OnDestroy {
           this.cartDetails = res.data;
           this.cartService.cartNumber.set(res.numOfCartItems);
 
-          console.log(res);
+          // console.log(res);
           if (res.numOfCartItems == 0) {
             this.showImageEmpty = true;
           }
@@ -94,7 +94,7 @@ export class CartComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           if (res.message == 'success') {
             this.cartService.cartNumber.set(0);

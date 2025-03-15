@@ -72,7 +72,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res) => {
           this.cartDetails = res.data;
-          console.log(res);
+          // console.log(res);
         },
         error: (err) => {
           console.log(err);
@@ -81,14 +81,14 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   submitAddressForm(): void {
-    console.log(this.address);
+    // console.log(this.address);
     if (this.address.valid) {
       this.addressService
         .addAddress(this.address.value)
         .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (res) => {
-            console.log(res);
+            // console.log(res);
             this.useraddress = res.data;
 
             if (res.message == 'Address added successfully') {
@@ -109,7 +109,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res) => {
           this.useraddress = res.data;
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.length > 1) {
             this.checkedAddress = false;
           }
@@ -131,7 +131,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         )
         .subscribe({
           next: (res) => {
-            console.log(res);
+            // console.log(res);
             if (res.status == 'success') {
               open(res.session.url, '_self');
             }
@@ -150,7 +150,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         )
         .subscribe({
           next: (res) => {
-            console.log(res);
+            // console.log(res);
             if (res.status == 'success') {
               this.router.navigate(['/allorders']);
             }
@@ -198,7 +198,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           if (res.status == 'success') {
             this.useraddress = res.data;
             this.toastrService.success(res.message, 'Address Info');

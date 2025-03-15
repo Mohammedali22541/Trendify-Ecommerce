@@ -43,7 +43,7 @@ export class CardComponent implements OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           // this.numberOfProducts.set(res.numOfCartItems);
           this.cartService.cartNumber.set(res.numOfCartItems);
 
@@ -66,7 +66,7 @@ export class CardComponent implements OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           this.wishlistService.wishListNumber.set(res.data.length);
 

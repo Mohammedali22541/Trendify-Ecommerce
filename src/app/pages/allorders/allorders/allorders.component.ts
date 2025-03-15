@@ -22,14 +22,14 @@ export class AllordersComponent implements OnInit {
   saveuserinfo() {
     if (localStorage.getItem('token') !== null) {
       this.userData = jwtDecode(localStorage.getItem('token')!);
-      console.log(this.userData.id);
+      // console.log(this.userData.id);
       this.getUserOrders(this.userData.id);
     }
   }
   getUserOrders(id: string): void {
     this.orderService.getUserOrders(id).subscribe({
       next: (res) => {
-        console.log(res);
+        // console.log(res);
         this.userOrders = res;
       },
       error: (err) => {

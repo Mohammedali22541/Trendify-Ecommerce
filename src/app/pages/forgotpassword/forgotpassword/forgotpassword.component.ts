@@ -55,7 +55,7 @@ export class ForgotpasswordComponent implements OnDestroy {
   sendVerficationCode(): void {
     let emailValue = this.verifyEmail.get('email')?.value;
     this.resetPassword.get('email')?.patchValue(emailValue);
-    console.log(this.verifyEmail.value);
+    // console.log(this.verifyEmail.value);
     if (!this.verifyEmail.valid) {
       return;
     }
@@ -66,7 +66,7 @@ export class ForgotpasswordComponent implements OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           if (res.statusMsg == 'success') {
             this.showSuccessAlert = true;
@@ -98,7 +98,7 @@ export class ForgotpasswordComponent implements OnDestroy {
   }
 
   submitResetCode(): void {
-    console.log(this.resetCode.value);
+    // console.log(this.resetCode.value);
     if (!this.resetCode.valid) {
       return;
     }
@@ -109,7 +109,7 @@ export class ForgotpasswordComponent implements OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           if (res.status == 'Success') {
             this.showSuccessAlert = true;
@@ -141,7 +141,7 @@ export class ForgotpasswordComponent implements OnDestroy {
   }
 
   changePassword(): void {
-    console.log(this.resetPassword.value);
+    // console.log(this.resetPassword.value);
     if (!this.resetPassword.valid) {
       return;
     }
@@ -152,7 +152,7 @@ export class ForgotpasswordComponent implements OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           localStorage.setItem('token', res.token);
           this.authService.saveuserinfo();
           this.router.navigate(['/home']);

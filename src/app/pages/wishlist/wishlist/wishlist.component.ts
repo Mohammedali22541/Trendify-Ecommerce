@@ -29,7 +29,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
           this.userWData = res.data;
         },
         error: (err) => {
@@ -45,7 +45,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
-          console.log(res);
+          // console.log(res);
 
           this.wishlistService.wishListNumber.set(res.data.length);
           if (res.status == 'success') {
