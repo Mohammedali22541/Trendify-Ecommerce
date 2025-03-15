@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "ngx-toastr/toastr";
+
+.li-style {
+  @apply font-popins text-base font-normal text-bg capitalize;
+}
+.text-style {
+  @apply font-popins font-normal text-white text-xs;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+.owl-carousel {
+  position: relative;
+}
+.owl-theme .owl-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  margin-top: 0;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  color: #8b5e35;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #8b5e35;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+// .owl-theme .owl-nav .owl-next {
+//   right: -50px; /* Adjust based on design */
+// }
+// .owl-theme .owl-nav .owl-prev {
+//   left: -50px; /* Adjust based on design */
+// }
+
+.owl-carousel .owl-item {
+  padding: 10px;
+}
+// .owl-carousel .owl-item img {
+//   width: 50px;
+//   height: 50px;
+// }
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: flex;
+}
+.owl-theme .owl-nav .owl-prev {
+  padding-left: 10px;
+}
+
+.owl-theme .owl-dots {
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 24px;
+  height: 4px;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: #8b5e35 !important;
+}
+
+.ngx-toastr {
+  background-color: rgba(139, 95, 53, 0.834);
+  padding: 10px 30px 10px 30px;
+  border-radius: 50px 50px 50px 50px;
+}
+.toast-title {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.toast-message {
+  text-transform: capitalize;
+  // word-wrap: normal;
+}
+.toast-progress {
+  background-color: #fff;
+  opacity: 1;
+}
+
+// #toast-container .toast.toast-success {
+//   background-image: url("/cart-shopping-solid.svg") !important;
+// }

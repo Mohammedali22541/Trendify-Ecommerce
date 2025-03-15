@@ -1,0 +1,118 @@
+<section class="py-20">
+  <div class="container px-8 space-y-[34px]">
+    <div class="Main-title text-center space-y-2">
+      <h2
+        class="font-Hedvig font-normal text-[26px] capitalize text-main leading-[34px]"
+      >
+        category
+      </h2>
+    </div>
+    <div class="nav-tabs">
+      <ul
+        class="flex flex-nowrap md:flex-wrap text-sm justify-center items-center font-medium text-center text-gray-500 w-fit mx-auto py-2 px-6 bg-[#EEEEEE] rounded-[44px] dark:text-gray-400"
+      >
+        @for (category of allcategoriesData; track category._id) { @if
+        (category.name == "Men's Fashion" || category.name == "Women's Fashion"
+        || category.name == "Electronics") {
+        <li class="me-2 list-none" (click)="getCategoryproducts(category._id)">
+          <button class="px-4 py-1">
+            {{ category.name }}
+          </button>
+        </li>
+        } }
+      </ul>
+    </div>
+
+    <div class="grid lg:grid-cols-[15%_minmax(0,1fr)] gap-6">
+      <div class="sidebar">
+        <h3 class="font-popins font-semibold text-xl">filter by</h3>
+        <div>
+          <div class="reviews flex justify-between items-center mt-10 py-2">
+            <h2 class="font-popins font-medium text-2xl text-text">Categry</h2>
+            @if (showCategoryFilter) {
+
+            <span (click)="toggleCategory()" class="cursor-pointer">
+              <i class="fa-solid fa-minus"></i>
+            </span>
+
+            }@else {
+            <span (click)="toggleCategory()" class="cursor-pointer">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+            }
+          </div>
+
+          @if (showCategoryFilter) { @for (category of allcategoriesData; track
+          category._id) { @if (category.name == "Men's Fashion" || category.name
+          == "Women's Fashion" || category.name == "Electronics"){
+          <li
+            class="list-none my-2"
+            (click)="getCategoryproducts(category._id)"
+          >
+            <button class="text-[#868484] font-popins font-medium text-base">
+              {{ category.name }}
+            </button>
+          </li>
+          }} }
+
+          <div class="Price flex justify-between items-center mt-10 py-2">
+            <h2 class="font-popins font-medium text-2xl text-text">Price</h2>
+            @if (showPriceFilter) {
+
+            <span (click)="togglePrice()" class="cursor-pointer">
+              <i class="fa-solid fa-minus"></i>
+            </span>
+
+            }@else {
+            <span (click)="togglePrice()" class="cursor-pointer">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+            }
+          </div>
+          @if (showPriceFilter) {
+          <div class="priceMinMax flex flex-col justify-between gap-3 mt-5">
+            <div class="Price-input flex flex-col gap-4">
+              <label
+                for="text"
+                class="text-2xl capitalize font-popins font-medium text-main"
+                >from</label
+              >
+              <input
+                [(ngModel)]="minPrice"
+                type="text"
+                placeholder="Min"
+                class="bg-white border-0 rounded-[10px] max-w-[365px] p-3"
+              />
+            </div>
+
+            <!-- <span class="3xl font-bold text-center">To</span> -->
+
+            <div class="Price-input flex flex-col gap-4">
+              <label
+                for="text"
+                class="text-2xl capitalize font-popins font-medium text-main"
+                >To</label
+              >
+
+              <input
+                [(ngModel)]="maxPrice"
+                type="text"
+                placeholder="Max"
+                class="bg-white border-0 rounded-[10px] max-w-[365px] p-3"
+              />
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        @for (procategory of categoryProducts | pricefilter:minPrice:maxPrice ;
+        track procategory.id ) {
+
+        <app-card [product]="procategory"></app-card>
+        }
+      </div>
+    </div>
+  </div>
+</section>

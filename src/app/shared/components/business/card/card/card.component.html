@@ -1,0 +1,69 @@
+<div class="relative">
+  <div
+    class="all-card"
+    [routerLink]="['/details', product.id]"
+    class="card bg-white px-3 py-4 rounded-[10px] drop-shadow-md cursor-pointer h-[600px] flex flex-col justify-between relative"
+  >
+    <div class="img-container mb-4 relative overflow-hidden">
+      <img
+        [src]="product.imageCover"
+        class="w-100 rounded-[10px] object-contain hover:scale-125 transition-transform duration-[0.9s] ease"
+        [alt]="product.title"
+      />
+
+      <span
+        class="absolute bg-main bottom-[4%] left-[2%] text-center rounded-sm text-[25px] leading-[30px] font-semibold font-Inter text-white w-[85px] py-1 px-[6px]"
+        >-10%</span
+      >
+    </div>
+    <div class="card-body">
+      <h3 class="font-popins font-medium text-2xl leading-[36px]">
+        {{ product.title.split(" ", 3).join(" ") }}
+      </h3>
+      <div class="rating space-x-1">
+        <span class="text-[#FFC000]"><i class="fa-solid fa-star"></i></span>
+        <span class="font-popins font-medium text-base text-[#090F41]"></span>
+        <span> {{ product.ratingsAverage }}</span>
+        <span
+          class="font-popins font-medium text-[12px] leading-[18px] text-Thirdtext"
+        >
+          ( {{ product.ratingsQuantity }}
+          )
+        </span>
+      </div>
+    </div>
+    <div class="card-footer flex justify-between items-center">
+      <div
+        class="price font-popins font-semibold text-xl leading-[30px] text-Secondtext space-x-2"
+      >
+        <span class="text-main">{{ product.price | currency : "GBP" }}</span>
+        <span class="line-through">{{
+          product.price + product.price * 0.1 | currency : "GBP"
+        }}</span>
+      </div>
+      <button type="button" (click)="addToCart(product._id, $event)">
+        <span
+          class="bg-main flex justify-center items-center size-[30px] text-white rounded-[10px] hover:bg-green-500 transition-colors duration-200"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+  @if (showAddedIcon) {
+
+  <span
+    (click)="addProductToWishList(product._id)"
+    class="absolute top-[5%] right-[5%] bg-gray-200 text-main size-[45px] rounded-full flex justify-center cursor-pointer items-center hover:bg-main hover:text-gray-200 transition-colors duration-300 ease-in"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </span>
+  }@else {
+  <span
+    (click)="deleteProdList(product.id)"
+    class="absolute top-[5%] right-[5%] bg-gray-200 text-main size-[45px] rounded-full flex justify-center cursor-pointer items-center hover:bg-main hover:text-gray-200 transition-colors duration-300 ease-in"
+  >
+    <i class="fa-solid fa-trash"></i>
+  </span>
+  }
+</div>

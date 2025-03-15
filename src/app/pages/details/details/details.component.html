@@ -1,0 +1,384 @@
+<section class="py-20">
+  <div class="container px-8">
+    <div
+      class="grid lg:grid-cols-[50%_minmax(0,1fr)] xl:grid-cols-[50%_minmax(0,1fr)] gap-[26px] justify-center"
+    >
+      <div
+        class="left grid grid-cols-[20%_minmax(0,1fr)] lg:grid-cols-[10%_minmax(0,1fr)] gap-[26px]"
+      >
+        <div class="flex flex-col gap-3">
+          @for (image of specificProductDetails.images; track $index) {
+          <div
+            class="img w-[72px] h-[88px] rounded-[16px] border border-[#8B5E35]"
+          >
+            <img
+              #thumbImg
+              (mouseenter)="changeImages($event)"
+              (click)="changeImages($event)"
+              [src]="image"
+              class="max-w-full h-full object-contain rounded-[16px] cursor-pointer"
+              alt="thumbImages"
+            />
+          </div>
+          }
+        </div>
+        <div class="img-main relative shadow-sm h-[630px]">
+          <img
+            #mainImage
+            [src]="specificProductDetails.imageCover"
+            class="h-full w-full object-contain"
+            [alt]="specificProductDetails.title"
+          />
+          <div class="moveButton absolute top-1/2 flex justify-between w-full">
+            <button type="button">
+              <span
+                class="bg-main size-[40px] flex items-center justify-center text-white rounded-full"
+                ><i class="fa-solid fa-chevron-left"></i
+              ></span>
+            </button>
+            <button type="button">
+              <span
+                class="bg-main size-[40px] flex items-center justify-center text-white rounded-full"
+                ><i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </button>
+          </div>
+          <div class="img-icon absolute top-[3%] right-[3%]">
+            <span
+              (click)="addProductToWishList(specificProductDetails._id)"
+              class="size-[40px] rounded-full flex cursor-pointer justify-center items-center text-[20px] text-main bg-[#FCFCFD] border border-main hover:bg-main hover:text-[#FCFCFD] transition-colors duration-300 ease-in"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-8">
+        <div class="title flex flex-col gap-3">
+          <div class="rating flex gap-[5px] items-center">
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="font-popins font-medium text-sm text-[#1D2939]"
+              >{{ specificProductDetails.ratingsAverage }}({{
+                specificProductDetails.ratingsQuantity
+              }})</span
+            >
+          </div>
+          <h2
+            class="font-popins font-semibold text-[32px] leading-[48px] text-text"
+          >
+            {{ specificProductDetails.title }}
+          </h2>
+          <p class="font-popins font-medium text-base text-[#667085]">
+            {{
+              showFullDescription
+                ? specificProductDetails.description
+                : specificProductDetails.description
+                ? specificProductDetails.description.split(" ", 12).join(" ") +
+                  "  ......"
+                : ""
+            }}
+            <a
+              class="text-main underline cursor-pointer"
+              (click)="toggelDescription()"
+              >{{ showFullDescription ? "See Less" : " See More" }}</a
+            >
+          </p>
+        </div>
+        @if (specificProductDetails && specificProductDetails.category) { @if
+        (specificProductDetails.category.name=="Men's Fashion" ||
+        specificProductDetails.category.name=="Women's Fashion") {
+
+        <div class="color flex flex-col gap-4">
+          <p class="font-popins font-medium text-xl capitalize">colors</p>
+          <div class="color-circle flex items-center gap-5">
+            <div class="main-circle">
+              <span
+                class="size-[48px] block rounded-full border border-[#3A3845] bg-[#507CCD]"
+              ></span>
+            </div>
+            <div class="all-circles flex items-center gap-6">
+              <span
+                class="size-[36px] rounded-full border border-[#D1D5DB] bg-white"
+              ></span>
+              <span
+                class="size-[36px] rounded-full border border-[#D1D5DB] bg-[#C88242]"
+              ></span>
+              <span
+                class="size-[36px] rounded-full border border-[#D1D5DB] bg-[#212F39]"
+              ></span>
+              <span
+                class="size-[36px] rounded-full border border-[#D1D5DB] bg-[#DCB9A8]"
+              ></span>
+              <span
+                class="size-[36px] rounded-full border border-[#D1D5DB] bg-[#A7B2A3]"
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div class="size flex flex-col gap-3">
+          <div
+            class="size-chart flex justify-between font-popins font-medium text-[20px] leading-[30px]"
+          >
+            <p>
+              <span class="text-[#090F41]">size: </span>
+              <span class="text-main">Meduim</span>
+            </p>
+            <p class="text-main underline capitalize">size guide</p>
+          </div>
+          <div class="all-sizes flex gap-3">
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              xs
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              s
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-main uppercase"
+            >
+              m
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              l
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              xl
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              xxl
+            </button>
+            <button
+              class="border border-[#EAECF0] py-2 px-4 bg-[#FCFCFD] font-popins font-normal text-base text-[#667085] uppercase"
+            >
+              xxxl
+            </button>
+          </div>
+        </div>
+        } }
+        <div class="quantity flex flex-col gap-3">
+          <p class="font-popins font-medium text-base text-[#1D2939]">
+            <span> Quantity: </span>
+            <span class="text-main">
+              {{ specificProductDetails.quantity }}
+            </span>
+          </p>
+          <div class="buy-button gap-3 flex flex-wrap items-center">
+            <div
+              class="change-quantity rounded-[12px] border border-[#8B5E35] py-3 px-5 flex flex-wrap gap-[40px]"
+            >
+              <button class="text-[#667085]" (click)="changeQuantity(-1)">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span class="font-popins font-medium text-xl text-[#1D2939]">
+                {{ count }}
+              </span>
+              <button class="text-[#667085]" (click)="changeQuantity(1)">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div class="add-to-cart">
+              <button
+                type="button"
+                (click)="addProuductToCart(specificProductDetails.id)"
+                class="hover:bg-green-500 bg-main rounded-[12px] py-3 px-6 shadow-inner shadow-[#00000033] text-center capitalize text-white"
+              >
+                <p class="flex gap-4">
+                  <span
+                    class="font-popins font-normal text-base text-[#FCFCFD]"
+                  >
+                    {{
+                      specificProductDetails.price * count | currency : "GBP"
+                    }}
+                  </span>
+                  <span class="font-normal text-sm"> .</span>
+                  <span class="font-popins font-medium text-sm text-[#FCFCFD]"
+                    >Add to Cart</span
+                  >
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="expected-delivery-time bg-[#F2F4F7] flex gap-2">
+          <span class="text-[#667085]">
+            <i class="fa-solid fa-truck-fast fa-bounce"></i>
+          </span>
+          <p class="font-popins font-normal text-base text-[#667085]">
+            Estimated Delivery:
+            <span class="font-medium text-[#1D2939]">{{
+              futureDate | date : "fullDate"
+            }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reviews flex justify-between items-center mt-10 py-2 border-b border-t border-Secondtext"
+      (click)="toggelReviews()"
+    >
+      <h2 class="font-popins font-medium text-2xl text-text">Reviews</h2>
+      @if (showDetailes) {
+
+      <span class="cursor-pointer">
+        <i class="fa-solid fa-minus"></i>
+      </span>
+
+      }@else if (!showDetailes) {
+      <span class="cursor-pointer">
+        <i class="fa-solid fa-plus"></i>
+      </span>
+      }
+    </div>
+    @if (showDetailes) {
+
+    <div class="grid md:grid-cols-[40%_minmax(0,1fr)] mt-4 gap-6">
+      <div
+        class="stars-reviews flex flex-col gap-4 bg-white p-8 rounded-xl h-fit"
+      >
+        <h3 class="font-popins font-medium text-sm text-[#0D0C22]">
+          Employee Reviews
+        </h3>
+        <span
+          class="font-popins font-bold text-[40px] leading-[20px text-text]"
+        >
+          4.7
+        </span>
+        <div class="stars flex">
+          <span class="text-[#FFC000]">
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="text-[#FFC000]">
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="text-[#FFC000]">
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="text-[#FFC000]">
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="text-[#FFC000]">
+            <i class="fa-solid fa-star"></i>
+          </span>
+        </div>
+        <span class="text-[#858585] font-popins font-medium text-sl"
+          >(578 Reviews)</span
+        >
+      </div>
+
+      <div class="reviewsComment flex flex-col gap-6 p-8 bg-white rounded-lg">
+        <div class="card flex flex-col gap-3">
+          <span class="font-Inter font-semibold text-xs text-Secondtext"
+            >Jan 20, 2024</span
+          >
+          <div class="stars flex">
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+          </div>
+          <div class="reviewer-name flex gap-3 items-center">
+            <span
+              class="font-Inter bg-[#e8dfd7] rounded-full flex justify-center items-center font-semibold text-sm text-main size-[36px]"
+            >
+              ak
+            </span>
+            <span class="">
+              <p class="font-popins font-medium text-sm text-text">Alex K.</p>
+            </span>
+          </div>
+          <p class="font-popins font-medium text-sm text-Secondtext">
+            Senior Analyst
+          </p>
+          <p class="text-[#37373B] font-popins font-medium text-base">
+            Lorem ipsum dolor sit amet consectetur. Egestas tincidunt sed
+            laoreet urna id morbi turpis. Est elit egestas
+          </p>
+        </div>
+        <div class="border-b-2 border-[#F8F7F4]"></div>
+        <div class="card flex flex-col gap-3">
+          <span class="font-Inter font-semibold text-xs text-Secondtext"
+            >Jan 20, 2024</span
+          >
+          <div class="stars flex">
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="text-[#FFC000]">
+              <i class="fa-solid fa-star"></i>
+            </span>
+          </div>
+          <div class="reviewer-name flex gap-3 items-center">
+            <span
+              class="font-Inter bg-[#e8dfd7] rounded-full flex justify-center items-center font-semibold text-sm text-main size-[36px]"
+            >
+              ak
+            </span>
+            <span class="">
+              <p class="font-popins font-medium text-sm text-text">Alex K.</p>
+            </span>
+          </div>
+          <p class="font-popins font-medium text-sm text-Secondtext">
+            Senior Analyst
+          </p>
+          <p class="text-[#37373B] font-popins font-medium text-base">
+            Lorem ipsum dolor sit amet consectetur. Egestas tincidunt sed
+            laoreet urna id morbi turpis. Est elit egestas
+          </p>
+        </div>
+      </div>
+    </div>
+
+    }
+
+    <div class="similarProducts flex flex-col gap-6">
+      <div class="title mt-5">
+        <h2
+          #similarProducts
+          class="font-popins font-semibold text-[40px] leading-[60px] text-text"
+        >
+          Similar products
+        </h2>
+      </div>
+      @defer (on viewport(similarProducts)) {
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[21px]">
+        @for (product of SimilarProducts.slice(1,5); track product.id) {
+        <app-card [showAddedIcon]="false" [product]="product"></app-card>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</section>

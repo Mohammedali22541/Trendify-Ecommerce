@@ -1,0 +1,145 @@
+<section class="pt-20">
+  <div class="container px-8 grid gap-8">
+    <div class="title flex flex-col gap-2">
+      <h1
+        class="capitalize font-popins font-semibold text-[40px] leading-[48px] text-text"
+      >
+        Contact me
+      </h1>
+      <p class="font-popins font-medium text-lg text-Secondtext">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor
+      </p>
+    </div>
+    <div class="form grid grid-cols-[75%] gap-8">
+      <div class="grid grid-cols-2 gap-8">
+        <div class="firstName flex flex-col gap-[10px]">
+          <label
+            for="firstName"
+            class="font-popins font-medium text-lg text-text"
+          >
+            First Name
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            class="rounded-[8px] border-main p-4 bg-white focus:border-main"
+          />
+        </div>
+        <div class="lastName flex flex-col gap-[10px]">
+          <label
+            for="lastName"
+            class="font-popins font-medium text-lg text-text"
+          >
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            class="rounded-[8px] border-main p-4 bg-white focus:border-main"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="email flex flex-col gap-[10px]">
+          <label for="email" class="font-popins font-medium text-lg text-text">
+            E-Mail
+          </label>
+          <input
+            type="email"
+            id="email"
+            class="rounded-[8px] border-main p-4 bg-white focus:border-main"
+          />
+        </div>
+        <div class="phoneNumber flex flex-col gap-[10px]">
+          <label
+            for="phoneNumber"
+            class="font-popins font-medium text-lg text-text"
+          >
+            Phone Number
+          </label>
+          <input
+            type="text"
+            id="phoneNumber"
+            class="rounded-[8px] border-main p-4 bg-white focus:border-main"
+          />
+        </div>
+      </div>
+      <div class="topics flex flex-col gap-[10px]">
+        <label
+          for="ChooseTopic"
+          class="font-popins font-medium text-lg text-text"
+        >
+          Choose a topic
+        </label>
+        <select
+          id="ChooseTopic"
+          class="rounded-[8px] border-main p-4 bg-white focus:border-main"
+        >
+          <option
+            value="Men's Fashion"
+            class="font-popins font-normal text-lg text-Secondtext"
+          >
+            Men's Fashion
+          </option>
+          <option
+            value="Men's Fashion"
+            class="font-popins font-normal text-lg text-Secondtext"
+          >
+            Woman's Fashion
+          </option>
+          <option
+            value="Men's Fashion"
+            class="font-popins font-normal text-lg text-Secondtext"
+          >
+            Electronic
+          </option>
+          <option
+            value="Men's Fashion"
+            class="font-popins font-normal text-lg text-Secondtext"
+          >
+            Category
+          </option>
+          <option
+            value="Men's Fashion"
+            class="font-popins font-normal text-lg text-Secondtext"
+          >
+            Blog
+          </option>
+        </select>
+      </div>
+      <div class="message flex flex-col gap-[10px]">
+        <label for="message" class="font-popins font-medium text-lg text-text">
+          Messsage
+        </label>
+        <textarea
+          rows="6"
+          placeholder="Type your message..."
+          class="rounded-[8px] border-main p-4 bg-white focus:border-main placeholder:font-popins placeholder:font-normal placeholder:text-lg placeholder:text-Secondtext"
+        ></textarea>
+      </div>
+      <div class="terms flex gap-[11px] items-center">
+        <input
+          type="checkbox"
+          name="terms"
+          id="terms"
+          class="bg-white border border-main rounded-md checked:border-white text-main"
+        />
+        <label
+          for="terms"
+          class="font-popins font-normal text-lg text-Secondtext"
+        >
+          I accept the terms
+        </label>
+      </div>
+      <div class="btn">
+        <button
+          class="bg-main rounded-[32px] py-2 px-20 font-popins font-semibold text-xl text-white"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<app-news></app-news>

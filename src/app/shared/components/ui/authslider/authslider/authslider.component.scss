@@ -1,0 +1,30 @@
+.owl-theme .owl-dots {
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+}
+
+::ng-deep .owl-theme .owl-nav [class*="owl-"] {
+  display: none;
+}
+
+::ng-deep .owl-theme .owl-nav {
+  display: none;
+}
+
+::ng-deep .owl-carousel {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+::ng-deep .owl-stage-outer {
+  overflow: hidden !important;
+}
+
+::ng-deep .owl-stage {
+  display: flex;
+  align-items: center;
+}

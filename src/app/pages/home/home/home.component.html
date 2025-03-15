@@ -1,0 +1,642 @@
+<section class="home-page flex items-center py-20">
+  <div class="container px-8">
+    <div class="header-title flex gap-[32px] flex-wrap max-w-[610px] relative">
+      <h1
+        class="font-popins font-semibold md:leading-[75px] leading-[40px] text-white text-[30px] md:text-[50px]"
+      >
+        Elevate Your Home with, Stylish Furniture
+      </h1>
+      <img
+        class="absolute top-[39%] left-[46%] w-[180px] h-[29px]"
+        src="/images/line.png"
+        alt=""
+      />
+      <p class="font-popins text-[18px] font-medium leading-[27px] text-bg">
+        Explore a range of high-quality, affordable furniture designed to
+        transform any room. Discover the perfect blend of style, comfort, and
+        functionality for your space.
+      </p>
+      <div class="button-style relative">
+        <button
+          routerLink="/products"
+          type="button"
+          class="bg-main border border-main rounded-[32px] px-24 py-3 text-white font-popins font-semibold text-xl leading-[30px]"
+        >
+          Shop Now
+        </button>
+        <img
+          src="/images/1.png"
+          class="w-[142px] h-[106px] absolute top-[75%] left-1/2"
+          alt="arrow"
+        />
+      </div>
+
+      <div
+        class="rating text-white absolute top-[111%] left-[58%] sm:top-[115%] sm:left-[52%]"
+      >
+        <div class="rating-stars flex gap-[11px] items-center">
+          <span class="font-Crimson font-bold text-[28px] leading-[31px]"
+            >4.8</span
+          >
+          <span>|</span>
+          <div class="stars">
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star-half-stroke"></i></span>
+          </div>
+        </div>
+        <p class="font-Hedvig font-normal leading-[26px] text-[20px]">
+          150k Total Review
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class=" py-16">
+  <div class="container">
+    <swiper-container
+      class="mySwiper"
+      slides-per-view="5"
+      centered-slides="false"
+      navigation="true"
+      space-between="30"
+      grab-cursor="true"
+      loop="true"
+    >
+      @for (category of allcategorydata; track category._id) {
+
+      <swiper-slide>
+        <div class="flex flex-col justify-center items-center">
+          <img
+            [src]="category.image"
+            class="w-[126px] h-[126px] rounded-full object-contain"
+            [alt]="category.name"
+          />
+          <p>{{ category.name }}</p>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</section> -->
+<!-- class="bg-[url(/images/slide1.webp)] h-[50vh] bg-center bg-cover bg-no-repeat" -->
+
+<!-- <section class="">
+  <div class="container">
+    <swiper-container
+      class="mySwiper p-5"
+      pagination="true"
+      pagination-clickable="true"
+      navigation="true"
+      space-between="0"
+      centered-slides="false"
+      autoplay-delay="2500"
+      autoplay-disable-on-interaction="false"
+    >
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div>
+          <img src="/images/main-slide.jpeg" class="w-100 h-[500px]" alt="" />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</section> -->
+<!-- <p [routerLink]="['/details', this.product_id]">home works!</p> -->
+
+<section class="py-10">
+  <div class="container">
+    <owl-carousel-o [options]="customOptions" class="w-[200px]">
+      @for (category of allCategoryData; track category._id) {
+      <ng-template carouselSlide [id]="category._id">
+        <div
+          class="justify-center items-center flex flex-col gap-2 text-center"
+        >
+          <div class="w-[100px] h-[100px] rounded-full overflow-hidden flex">
+            <img
+              [src]="category.image"
+              [alt]="category.name"
+              class="w-full h-full"
+            />
+          </div>
+          <p>{{ category.name }}</p>
+        </div>
+      </ng-template>
+
+      }
+    </owl-carousel-o>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container px-8 space-y-[40px]">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[32px] text-main leading-[43px]">
+        Flash Sale
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        Grab Them Before They're Gone!
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[21px]">
+      @for (product of allProductData.slice(31,39); track product.id) {
+      <app-card [product]="product"></app-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container px-8 space-y-[40px]">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[26px] text-main leading-[34px]">
+        New Collection
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        Check the new Collection
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-2 -1 gap-[20px] md:h-full">
+      <div class="img-container relative">
+        <img
+          src="/images/shoes.png"
+          class="w-full h-full rounded-3xl object-cover"
+          alt="Shoes"
+        />
+
+        <div
+          class="layer rounded-3xl bg-[rgba(0,0,0,0.5)] absolute top-[0%] left-[0%] right-[0%] bottom-[0%] flex justify-center items-center flex-col text-white"
+        >
+          <h3 class="font-popins font-semibold text-[50px] leading-[75px]">
+            Shoes
+          </h3>
+          <p class="font-popins font-medium text-[32px] leading-[48px]">
+            UP TO 50%OFF
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-[20px]">
+        <div class="img-container relative">
+          <img
+            src="/images/bags.jpeg"
+            class="max-h-[350px] w-full rounded-3xl object-cover"
+            alt="Bags"
+          />
+
+          <div
+            class="layer rounded-3xl bg-[rgba(0,0,0,0.5)] absolute top-[0%] left-[0%] right-[0%] bottom-[0%] flex justify-center items-center flex-col text-white"
+          >
+            <h3 class="font-popins font-semibold text-[50px] leading-[75px]">
+              Bags
+            </h3>
+            <p class="font-popins font-medium text-[32px] leading-[48px]">
+              UP TO 50%OFF
+            </p>
+          </div>
+        </div>
+        <div class="img-container relative">
+          <img
+            src="/images/acc.jpeg"
+            class="max-h-[350px] w-full rounded-3xl object-cover"
+            alt=" Accessories"
+          />
+
+          <div
+            class="layer rounded-3xl bg-[rgba(0,0,0,0.5)] absolute top-[0%] left-[0%] right-[0%] bottom-[0%] flex justify-center items-center flex-col text-white"
+          >
+            <h3 class="font-popins font-semibold text-[50px] leading-[75px]">
+              Accessories
+            </h3>
+            <p class="font-popins font-medium text-[32px] leading-[48px]">
+              UP TO 50%OFF
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container px-8 flex flex-col gap-10">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[26px] text-main leading-[34px]">
+        Products
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        Best Selling Product
+      </h3>
+    </div>
+    <div class="nav-tabs">
+      <ul
+        class="flex flex-nowrap md:flex-wrap text-sm justify-center font-medium text-center text-gray-500 w-fit mx-auto py-2 px-6 bg-[#EEEEEE] rounded-[44px] dark:text-gray-400"
+      >
+        @for (category of allCategoryData; track category._id) { @if
+        (category.name == "Men's Fashion" || category.name == "Women's Fashion"
+        || category.name == "Electronics") {
+        <li class="me-2 list-none" (click)="getCategoryproducts(category._id)">
+          <button class="px-4 py-1">
+            {{ category.name }}
+          </button>
+        </li>
+        } }
+      </ul>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      @for (procategory of categoryProducts.slice(7,11); track procategory.id )
+      {
+
+      <app-card [product]="procategory"></app-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container px-8 space-y-[40px]">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[32px] text-main leading-[43px]">
+        Top Products
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        Top Picks for You!"
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[21px]">
+      @for (product of pageTwoProduct.slice(4,8); track product.id) {
+      <app-card [product]="product"></app-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section
+  class="lastSlide py-10 bg-[url('/images/sslide.jpeg')] bg-top bg-cover h-[500px] relative bg-fixed b p-2"
+>
+  <div
+    class="layer absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center flex-wrap flex-col gap-[24px]"
+  >
+    <h2
+      class="font-popins text-[48px] leading-[72px] font-bold text-white text-center"
+    >
+      Discover Fashion That Speaks To You.
+    </h2>
+    <p
+      class="font-popins font-medium text-2xl text-white leading-[36px] text-balance text-center"
+    >
+      Explore a range of high-quality, affordable furniture designed to
+      transform any room. Discover the perfect blend of style, comfort, and
+      functionality for your space.
+    </p>
+    <button
+      type="button"
+      class="bg-transparent border border-white px-5 py-1 rounded-[32px] font-popins text-lg text-white font-medium"
+    >
+      See More
+    </button>
+  </div>
+</section>
+<section class="py-10">
+  <div class="container px-8 space-y-[47px]">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[26px] text-main leading-[43px]">
+        Services
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        Benefits when using our services
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 mx-auto gap-[28px]">
+      <div
+        class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[25px]"
+      >
+        <div class="icon space-y-[8px]">
+          <span
+            class="flex justify-center items-center bg-bg size-[62px] rounded-full"
+          >
+            <i class="fa-solid fa-fire text-main"></i>
+          </span>
+
+          <h2
+            class="icon-title font-popins font-semibold text-xl leading-[30px] text-text"
+          >
+            Inspiration
+          </h2>
+        </div>
+        <div class="card-body">
+          <p class="font-popins font-normal text-lg text-Secondtext">
+            Stay ahead of trends with fresh ideas and creativity. Get inspired
+            and bring your vision to life effortlessly.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[25px]"
+      >
+        <div class="icon space-y-[8px]">
+          <span
+            class="flex justify-center items-center bg-bg size-[62px] rounded-full"
+          >
+            <i class="fa-solid fa-headphones"></i>
+          </span>
+
+          <h2
+            class="icon-title font-popins font-semibold text-xl leading-[30px] text-text"
+          >
+            24/7 Customer Services
+          </h2>
+        </div>
+        <div class="card-body">
+          <p class="font-popins font-normal text-lg text-Secondtext">
+            We’re here for you anytime! Get round-the-clock support for all your
+            questions and concerns.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[25px]"
+      >
+        <div class="icon space-y-[8px]">
+          <span
+            class="flex justify-center items-center bg-bg size-[62px] rounded-full"
+          >
+            <i class="fa-solid fa-truck-fast"></i>
+          </span>
+
+          <h2
+            class="icon-title font-popins font-semibold text-xl leading-[30px] text-text"
+          >
+            Express Shipping
+          </h2>
+        </div>
+        <div class="card-body">
+          <p class="font-popins font-normal text-lg text-Secondtext">
+            Fast, reliable delivery to your doorstep. Enjoy hassle-free shopping
+            with quick and secure shipping services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container px-8 space-y-[47px]">
+    <div class="Main-title text-center space-y-2">
+      <h2 class="font-Hedvig font-normal text-[26px] text-main leading-[43px]">
+        Testimonials
+      </h2>
+      <h3
+        class="font-popins font-semibold text-[40px] text-[#090F41] leading-[60px]"
+      >
+        What Our Customer Say
+      </h3>
+    </div>
+
+    <div class="">
+      <owl-carousel-o [options]="ratingslide">
+        <ng-template carouselSlide>
+          <div
+            class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[16px] h-[300px]"
+          >
+            <div class="icon space-y-[8px]">
+              <span class="text-[25px] text-main">
+                <i class="fa-solid fa-quote-left"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <p class="font-popins font-normal text-lg text-Secondtext">
+                "This product changed my life! The quality, design, and comfort
+                exceeded expectations. Highly recommended for everyone!"
+              </p>
+            </div>
+            <div class="card-footer flex justify-between items-center">
+              <div class="author flex justify-center items-center gap-[14px]">
+                <img
+                  src="/images/testmonial.png"
+                  alt=""
+                  class="w-[50px] h-[50px] rounded-full"
+                />
+                <h2 class="font-popins font-semibold text-xl">Berry Gunawan</h2>
+              </div>
+              <div
+                class="author-rating flex justify-center items-center gap-[10px]"
+              >
+                <span class="text-reveiw">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="font-popins font-medium text-lg">3.5</span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[16px] h-[300px]"
+          >
+            <div class="icon space-y-[8px]">
+              <span class="text-[25px] text-main">
+                <i class="fa-solid fa-quote-left"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <p class="font-popins font-normal text-lg text-Secondtext">
+                "Amazing experience! The service was outstanding, delivery was
+                fast, and the product quality is beyond exceptional. Totally
+                satisfied!"
+              </p>
+            </div>
+            <div class="card-footer flex justify-between items-center">
+              <div class="author flex justify-center items-center gap-[14px]">
+                <img
+                  src="/images/test2.jpg"
+                  alt=""
+                  class="w-[50px] h-[50px] rounded-full"
+                />
+                <h2 class="font-popins font-semibold text-xl">James Carter</h2>
+              </div>
+              <div
+                class="author-rating flex justify-center items-center gap-[10px]"
+              >
+                <span class="text-reveiw">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="font-popins font-medium text-lg">3.5</span>
+              </div>
+            </div>
+          </div></ng-template
+        >
+        <ng-template carouselSlide>
+          <div
+            class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[16px] h-[300px]"
+          >
+            <div class="icon space-y-[8px]">
+              <span class="text-[25px] text-main">
+                <i class="fa-solid fa-quote-left"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <p class="font-popins font-normal text-lg text-Secondtext">
+                "Absolutely love it! The attention to detail, durability, and
+                stylish look make this a perfect purchase. Worth it!"
+              </p>
+            </div>
+            <div class="card-footer flex justify-between items-center">
+              <div class="author flex justify-center items-center gap-[14px]">
+                <img
+                  src="/images/test3.jpg"
+                  alt=""
+                  class="w-[50px] h-[50px] rounded-full"
+                />
+                <h2 class="font-popins font-semibold text-xl">Ryan Mitchell</h2>
+              </div>
+              <div
+                class="author-rating flex justify-center items-center gap-[10px]"
+              >
+                <span class="text-reveiw">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="font-popins font-medium text-lg">3.5</span>
+              </div>
+            </div>
+          </div></ng-template
+        >
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<!-- 
+      <div class="card bg-white px-3 py-4 rounded-[10px]">
+        <div class="img-container mb-4 relative">
+          <img
+            src="/images/f1.png"
+            class="w-100 rounded-[10px] object-contain"
+            alt=""
+          />
+
+          <span
+            class="absolute bg-main bottom-[4%] left-[2%] text-center rounded-sm text-[25px] leading-[30px] font-semibold font-Inter text-white w-[85px] py-1 px-[6px]"
+            >-50%</span
+          >
+        </div>
+        <div class="card-body">
+          <h3 class="font-popins font-medium text-2xl leading-[36px]">
+            Full Outfit
+          </h3>
+          <div class="rating space-x-1">
+            <span class="text-[#FFC000]"><i class="fa-solid fa-star"></i></span>
+            <span class="font-popins font-medium text-base text-[#090F41]"
+              >4.8</span
+            >
+            <span
+              class="font-popins font-medium text-[12px] leading-[18px] text-Thirdtext"
+              >(500+)</span
+            >
+          </div>
+        </div>
+        <div class="card-footer flex justify-between items-center">
+          <div
+            class="price font-popins font-semibold text-xl leading-[30px] text-Secondtext space-x-2"
+          >
+            <span class="text-main">5000</span>
+            <span class="line-through">10000 EGB</span>
+          </div>
+          <span
+            class="bg-main flex justify-center items-center size-[30px] text-white rounded-[10px]"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </span>
+        </div>
+      </div>
+
+     -->
+<!-- 
+<div class="grid md:grid-cols-3 gap-[28px]">
+  <div
+    class="card bg-white rounded-[10px] flex flex-col gap-[16px] pt-[16px] pb-[48px] px-[16px]"
+  >
+    <div class="icon space-y-[8px]">
+      <span class="text-[25px] text-main">
+        <i class="fa-solid fa-quote-left"></i>
+      </span>
+    </div>
+    <div class="card-body">
+      <p class="font-popins font-normal text-lg text-Secondtext">
+        Lorem ipsum dolor sit amet consectetur. Est vel risus hendrerit laoreet
+        purus malesuada dignissim.
+      </p>
+    </div>
+    <div class="card-footer flex justify-between items-center">
+      <div class="author flex justify-center items-center gap-[14px]">
+        <img
+          src="/images/testmonial.png"
+          alt=""
+          class="w-[50px] h-[50px] rounded-full"
+        />
+        <h2 class="font-popins font-semibold text-xl">Berry Gunawan</h2>
+      </div>
+      <div class="author-rating flex justify-center items-center gap-[10px]">
+        <span class="text-reveiw">
+          <i class="fa-solid fa-star"></i>
+        </span>
+        <span class="font-popins font-medium text-lg">3.5</span>
+      </div>
+    </div>
+  </div>
+</div> -->

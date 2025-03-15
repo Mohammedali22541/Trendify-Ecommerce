@@ -1,0 +1,23 @@
+input::placeholder {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+  color: #9d9daa;
+}
+.owl-theme .owl-dots {
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+}
+
+::ng-deep .owl-theme .owl-nav [class*="owl-"] {
+  display: none;
+}
+
+::ng-deep .owl-theme .owl-nav {
+  display: none;
+}

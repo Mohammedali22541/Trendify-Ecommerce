@@ -1,0 +1,492 @@
+<div class="section py-20">
+  <div class="container px-8">
+    <div class="grid lg:grid-cols-2">
+      <div
+        class="register-form flex flex-col gap-6 md:px-[100px] justify-center"
+      >
+        <div class="info">
+          <h2 class="font-popins text-[32px] leading-[48px] text-text">
+            Create a Account
+          </h2>
+          <span class="font-popins font-normal text-lg text-Secondtext">
+            Create a new account
+          </span>
+        </div>
+        <form
+          class="flex flex-col gap-6"
+          [formGroup]="registerForm"
+          (ngSubmit)="submitRegisterForm()"
+        >
+          <div class="user-name flex flex-col gap-2">
+            @let nameControl = registerForm.get("name");
+
+            <label for="name" class="font-popins font-medium text-lg text-text">
+              User Name
+            </label>
+            <input
+              formControlName="name"
+              placeholder="Mohammed"
+              type="text"
+              id="name"
+              class="rounded-[8px] border-white bg-white focus:border-0"
+            />
+
+            @if (nameControl?.errors && nameControl?.touched) {
+
+            <div
+              class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  @if (nameControl?.getError("required")) {
+                  <li>Name is required</li>
+
+                  }@else if (nameControl?.getError("minlength")) {
+                  <li>At least 3 characters</li>
+
+                  }@else if (nameControl?.getError("maxlength")) {
+                  <li>Max 20 characters</li>
+
+                  }
+                </ul>
+              </div>
+            </div>
+            }
+          </div>
+          <div class="Email flex flex-col relative gap-2">
+            @let emailControl = registerForm.get("email");
+
+            <label
+              for="email"
+              class="font-popins font-medium text-lg text-text"
+            >
+              E-Mail
+            </label>
+            <input
+              formControlName="email"
+              placeholder="Mohammed@gmail.com"
+              type="email"
+              id="email"
+              class="rounded-[8px] border-white bg-white px-8 focus:border-0"
+            />
+            <span
+              class="text-main bg-transparent absolute left-[10px] top-[46px]"
+            >
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            @if (emailControl?.errors && emailControl?.touched) {
+
+            <div
+              class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  @if (emailControl?.getError("required")) {
+                  <li>email is required</li>
+
+                  }@else if (emailControl?.getError("email")) {
+                  <li>enter valid email</li>
+
+                  }
+                </ul>
+              </div>
+            </div>
+            }
+          </div>
+          <div class="password flex flex-col relative gap-2">
+            @let passwordControl = registerForm.get("password");
+
+            <label
+              for="password"
+              class="font-popins font-medium text-lg text-text"
+            >
+              Password
+            </label>
+            <input
+              data-popover-target="popover-password"
+              data-popover-placement="bottom"
+              formControlName="password"
+              placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+              type="password"
+              id="password"
+              class="rounded-[8px] border-white bg-white px-8 focus:border-0"
+            />
+            <span
+              class="text-main bg-transparent absolute left-[10px] top-[44px]"
+            >
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            @if (passwordControl?.errors && passwordControl?.touched) {
+
+            <div
+              class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  @if (passwordControl?.getError("required")) {
+                  <li>password is required</li>
+
+                  }@else if (passwordControl?.getError("pattern")) {
+                  <li>enter valid password</li>
+
+                  }
+                </ul>
+              </div>
+            </div>
+            }
+
+            <div
+              data-popover
+              id="popover-password"
+              role="tooltip"
+              class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400"
+            >
+              <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">
+                  Please Follow These Instruction
+                </h3>
+
+                <ul>
+                  @if(passwordControl?.hasError("pattern") ||
+                  !passwordControl?.dirty || !passwordControl?.value) {
+
+                  <li class="flex items-center mb-1">
+                    Must have at least 8 characters
+                  </li>
+                  <li class="flex items-center mb-1">
+                    First letter must be uppercase
+                  </li>
+                  } @else{
+
+                  <li class="flex items-center mb-1">
+                    <svg
+                      class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 16 12"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5.917 5.724 10.5 15 1.5"
+                      />
+                    </svg>
+                    Must have at least 8 characters
+                  </li>
+                  <li class="flex items-center mb-1">
+                    <svg
+                      class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 16 12"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5.917 5.724 10.5 15 1.5"
+                      />
+                    </svg>
+                    First letter must be uppercase
+                  </li>
+
+                  }
+
+                  <!-- <li class="flex items-center mb-1">
+                    <svg class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                    </svg>
+
+
+                    <svg class="w-3 h-3 me-2.5 text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+
+
+                    Upper & lower case letters
+                </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="rePassword flex flex-col relative gap-2">
+            <!-- @let rePasswordControl  = registerForm.get("rePassword"); -->
+
+            <label
+              for="rePassword"
+              class="font-popins font-medium text-lg text-text"
+            >
+              Re-Password
+            </label>
+            <input
+              formControlName="rePassword"
+              placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+              type="password"
+              id="rePassword"
+              class="rounded-[8px] border-white bg-white px-8 focus:border-0"
+            />
+            <span
+              class="text-main bg-transparent absolute left-[10px] top-[44px]"
+            >
+              <i class="fa-solid fa-lock"></i>
+            </span>
+
+            @if (registerForm.getError('mismatch') &&
+            registerForm.get("rePassword")?.touched) {
+            <div
+              class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  @if (registerForm.errors) {
+                  <li>password is not match</li>
+                  }
+                </ul>
+              </div>
+            </div>
+            } @if (registerForm.get("rePassword")?.getError("required") &&
+            registerForm.get("rePassword")?.touched) {
+            <div
+              class="flex p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  <li>password is required</li>
+                </ul>
+              </div>
+            </div>
+            }
+          </div>
+          <div class="phone flex flex-col relative gap-2">
+            @let phoneControl = registerForm.get("phone");
+
+            <label
+              for="phone"
+              class="font-popins font-medium text-lg text-text"
+            >
+              Phone
+            </label>
+            <input
+              formControlName="phone"
+              placeholder="01091945839"
+              type="text"
+              id="phone"
+              class="rounded-[8px] border-white bg-white px-8 focus:border-0"
+            />
+            <span
+              class="text-main bg-transparent absolute left-[10px] top-[45px]"
+            >
+              <i class="fa-solid fa-mobile"></i>
+            </span>
+
+            @if (phoneControl?.errors && phoneControl?.touched) {
+
+            <div
+              class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">Danger</span>
+              <div>
+                <span class="font-medium"
+                  >Ensure that these requirements are met:</span
+                >
+                <ul class="mt-1.5 list-disc list-inside">
+                  @if (phoneControl?.getError("required")) {
+                  <li>phone is required</li>
+
+                  }@else if (phoneControl?.getError("pattern")) {
+                  <li>enter valid phone number</li>
+
+                  }
+                </ul>
+              </div>
+            </div>
+            }
+          </div>
+
+          <div class="flex items-center">
+            @let termsControl = registerForm.get("terms");
+
+            <input
+              formControlName="terms"
+              id="terms"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+            />
+            <label
+              for="terms"
+              class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >I agree with the
+              <a
+                href="#"
+                class="text-blue-600 hover:underline dark:text-blue-500"
+                >terms and conditions</a
+              ></label
+            >
+          </div>
+          @if (termsControl?.errors&&termsControl?.touched) {
+
+          <div
+            class="flex p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert"
+          >
+            <svg
+              class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+              />
+            </svg>
+            <span class="sr-only">Danger</span>
+            <div>
+              <span class="font-medium"
+                >Ensure that these requirements are met:</span
+              >
+              <ul class="mt-1.5 list-disc list-inside">
+                @if (termsControl?.getError("required")) {
+                <li>You must agree to the terms and conditions to continue.</li>
+                }
+              </ul>
+            </div>
+          </div>
+          }
+          <button
+            [disabled]="isLoding"
+            type="submit"
+            class="text-white bg-main disabled:bg-gray-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Register new account @if (isLoding) {
+            <span>
+              <i class="fas fa-spin fa-spinner"></i>
+            </span>
+            }
+          </button>
+          <p class="font-popins font-medium text-lg text-Secondtext">
+            Already have on account?
+            <span
+              routerLink="/login"
+              class="text-main cursor-pointer underline"
+            >
+              Log In
+            </span>
+          </p>
+          @if (messageError) {
+          <p class="bg-red-500 p-4 mt-5 text-white rounded text-2xl">
+            {{ messageError }}
+          </p>
+          } @if (isSuccess) {
+          <p class="bg-green-500 p-4 mt-5 text-white rounded text-2xl">
+            {{ isSuccess }}
+          </p>
+          }
+        </form>
+      </div>
+
+      <div class="slid overflow-hidden">
+        <app-authslider></app-authslider>
+      </div>
+    </div>
+  </div>
+</div>
