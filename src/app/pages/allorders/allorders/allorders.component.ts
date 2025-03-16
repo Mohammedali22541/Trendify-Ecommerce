@@ -3,10 +3,11 @@ import { OrderService } from '../../../core/services/order/order.service';
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { jwtDecode } from 'jwt-decode';
 import { UserOrder } from '../../../shared/interfaces/user-order';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-allorders',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './allorders.component.html',
   styleUrl: './allorders.component.scss',
 })

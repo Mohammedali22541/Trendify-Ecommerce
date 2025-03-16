@@ -25,7 +25,7 @@
             order.isPaid ? "completed" : "Not Completed"
           }}</span>
           <span class="text-[#404553] font-popins font-normal text-base"
-            >on{{ order.paidAt }}</span
+            >on &nbsp;{{ order.paidAt | date : "fullDate" }}</span
           >
         </div>
         <div class="order-box__body flex justify-between items-center">
