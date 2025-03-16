@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   allCategoryData: Icategory[] = [];
   allProductData: Iproducts[] = [];
   pageTwoProduct: Iproducts[] = [];
+  selectedCategoryId: string | null = null;
+
   // dataWomans: SpecificategorydataW[] = [];
   // dataMans: SpecificategorydataW[] = [];
   // dataELC: SpecificategorydataW[] = [];
@@ -63,6 +65,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getCategoryproducts(id: string): void {
+    this.selectedCategoryId = id;
+
     this.productsService
       .getCategoryproducts(id)
       .pipe(takeUntil(this.destroy$))

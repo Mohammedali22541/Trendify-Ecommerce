@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   showCategoryFilter: boolean = true;
   showPriceFilter: boolean = false;
+  selectedCategoryId: string | null = null;
   minPrice: number | null = null; // Default to null
   maxPrice: number | null = null; // Default to null
 
@@ -49,6 +50,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   getCategoryproducts(id: string): void {
+    this.selectedCategoryId = id;
+
     this.productsService
       .getCategoryproducts(id)
       .pipe(takeUntil(this.destroy$))

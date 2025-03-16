@@ -15,7 +15,14 @@
         (category.name == "Men's Fashion" || category.name == "Women's Fashion"
         || category.name == "Electronics") {
         <li class="me-2 list-none" (click)="getCategoryproducts(category._id)">
-          <button class="px-4 py-1">
+          <button
+            class="px-4 py-3 transition-all duration-[900ms] ease-in-out"
+            [class]="{
+              'text-white': selectedCategoryId === category._id,
+              'bg-main': selectedCategoryId === category._id,
+              'rounded-full': selectedCategoryId === category._id,
+            }"
+          >
             {{ category.name }}
           </button>
         </li>
