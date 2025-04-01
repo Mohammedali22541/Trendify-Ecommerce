@@ -16,17 +16,21 @@
       <button
         (click)="authService.signout()"
         type="button"
-        class="text-white border border-primary px-12 py-3 duration-[0.5s] rounded-full capitalize bg-primary hover:bg-transparent hover:text-primary focus:outline-none font-medium text-sm text-center :bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white border border-primary px-6 py-3 duration-[0.5s] rounded-full capitalize bg-primary hover:text-primary hover:bg-white focus:outline-none font-medium text-sm text-center"
       >
-        Log Out
+        <span>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </span>
       </button>
       }@else {
       <button
         routerLink="/login"
         type="button"
-        class="text-white border border-primary px-12 py-3 duration-[0.5s] rounded-full capitalize bg-primary hover:bg-transparent hover:text-primary focus:outline-none font-medium text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white border border-primary px-6 py-3 duration-[0.5s] rounded-full capitalize bg-primary hover:text-primary hover:bg-white focus:outline-none font-medium text-sm text-center"
       >
-        Log In
+        <span>
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </span>
       </button>
       }
 
