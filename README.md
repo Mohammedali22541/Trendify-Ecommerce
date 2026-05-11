@@ -31,7 +31,7 @@ Trendify Ecommerce is an Angular 19 SSR storefront that connects to the RouteMis
 npm install
 npm start
 ```
-Then open `http://localhost:4200`.
+After the dev server starts, open `http://localhost:4200`.
 
 ### SSR Build & Serve
 ```bash
@@ -49,7 +49,7 @@ npm run serve:ssr:E-Commerce
 | `npm run serve:ssr:E-Commerce` | Serve the SSR build |
 
 ## Configuration
-- API base URL is set in `src/app/core/environment/environments.ts`.
+- API base URL is set in `src/app/core/environment/environments.ts` (folder name: `environment`).
 - Checkout success URL is configured in `src/app/core/services/order/order.service.ts`.
 
 ## Project Structure
