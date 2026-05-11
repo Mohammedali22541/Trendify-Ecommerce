@@ -23,7 +23,7 @@ Trendify Ecommerce is an Angular 19 SSR storefront that connects to the RouteMis
 
 ## Getting Started
 ### Prerequisites
-- Node.js 18+ and npm
+- Node.js 18.19+ or 20.11+ and npm
 - Angular CLI (optional, but helpful)
 
 ### Install & Run
@@ -50,6 +50,7 @@ npm run serve:ssr:E-Commerce
 
 ## Configuration
 - API base URL is set in `src/app/core/environment/environments.ts`.
+  This repository uses a singular `environment` folder with a pluralized file name.
 - Checkout success URL is configured in `src/app/core/services/order/order.service.ts`.
 
 ## Project Structure
