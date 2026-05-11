@@ -1,6 +1,6 @@
 # Trendify Ecommerce
 
-Trendify Ecommerce is an Angular 19 SSR storefront that connects to the RouteMisr e-commerce API to deliver a modern shopping experience with authentication, cart, checkout, and order tracking.
+Trendify Ecommerce is an Angular 19 SSR storefront that connects to the RouteMisr ecommerce API to deliver a modern shopping experience with authentication, cart, checkout, and order tracking.
 
 ## Features
 - Product catalog with categories and brands
@@ -60,7 +60,7 @@ npm run serve:ssr:E-Commerce
 - `src/server.ts` – SSR server entry
 
 ## API
-This project uses the RouteMisr e-commerce API:
+This project uses the RouteMisr ecommerce API:
 `https://ecommerce.routemisr.com/api/v1`
 
 ## License
