@@ -1,59 +1,67 @@
-# ECommerce
+# Trendify Ecommerce
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Trendify Ecommerce is an Angular 19 SSR storefront that connects to the RouteMisr e-commerce API to deliver a modern shopping experience with authentication, cart, checkout, and order tracking.
 
-## Development server
+## Features
+- Product catalog with categories and brands
+- Product details and category filtering
+- Cart management (add, update quantity, remove, clear)
+- Wishlist management
+- Authentication (register, login, forgot/reset password)
+- Checkout (cash orders and online checkout session)
+- Address management and order history
+- Blog, About Us, and Contact Us pages
+- Server-side rendering for improved SEO and performance
 
-To start a local development server, run:
+## Tech Stack
+- Angular 19 + TypeScript
+- Angular SSR
+- RxJS
+- Tailwind CSS + Flowbite
+- Font Awesome
+- ngx-owl-carousel-o, ngx-toastr, ngx-spinner
 
+## Getting Started
+### Prerequisites
+- Node.js 18+ and npm
+- Angular CLI (optional, but helpful)
+
+### Install & Run
 ```bash
-ng serve
+npm install
+npm start
+```
+Then open `http://localhost:4200`.
+
+### SSR Build & Serve
+```bash
+npm run build
+npm run serve:ssr:E-Commerce
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Available Scripts
+| Script | Description |
+| --- | --- |
+| `npm start` | Start the development server |
+| `npm run build` | Production build (SSR output) |
+| `npm run watch` | Development build in watch mode |
+| `npm test` | Run unit tests (Karma + Jasmine) |
+| `npm run serve:ssr:E-Commerce` | Serve the SSR build |
 
-## Code scaffolding
+## Configuration
+- API base URL is set in `src/app/core/environment/environments.ts`.
+- Checkout success URL is configured in `src/app/core/services/order/order.service.ts`.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Project Structure
+- `src/app/core` – environment, guards, interceptors, services
+- `src/app/pages` – main feature pages (home, products, cart, checkout, auth, etc.)
+- `src/app/shared` – reusable components, pipes, interfaces
+- `src/app/layouts` – navbar and footer
+- `src/server.ts` – SSR server entry
 
-```bash
-ng generate component component-name
-```
+## API
+This project uses the RouteMisr e-commerce API:
+`https://ecommerce.routemisr.com/api/v1`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+ISC
