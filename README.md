@@ -49,7 +49,7 @@ npm run serve:ssr:E-Commerce
 | `npm run serve:ssr:E-Commerce` | Serve the SSR build |
 
 ## Configuration
-- API base URL is set in `src/app/core/environment/environments.ts` (folder name: `environment`).
+- API base URL is set in `src/app/core/environment/environments.ts`.
 - Checkout success URL is configured in `src/app/core/services/order/order.service.ts`.
 
 ## Project Structure
